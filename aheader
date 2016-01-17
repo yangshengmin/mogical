@@ -1,0 +1,91 @@
+<!--top-->
+
+<div class="top" {loop source=get_flash($tpl_id="1",$order="desc")}style="background:url({print $v['pic']/}) no-repeat center;"{/loop}>
+
+     <div class="logo">
+
+<!--          <img src="{path template/}/images/logo.png">
+
+-->     </div>
+
+</div>
+
+
+
+<!--nav-->
+
+<div class="nav">
+
+     <ul class="nav1">
+
+     
+
+        <li><a href="{path index/}" class="first">首页</a></li>
+
+        
+
+        {loop source=nav_middle() item=$nav_child} 
+
+        <li {if $nav_child['child']}class="li1"{/if}><a href="{print $nav_child['url']/}">{print $nav_child['cate_name']/}</a>
+
+            {if $nav_child['child']}
+
+                <ul class="nav2">
+
+                        {loop source=$nav_child['child']}
+
+                       <li {if $v['child']}class="li2"{/if}><a href="{print $v['url']/}">{print $v['cate_name']/}</a>
+
+                           {if $v['child']}
+
+                               <ul class="nav3">
+
+                                   <li><a href="" class="one">入住指南</a></li>
+
+                                   <li><a href="">生活服务指南</a></li>
+
+                                   <li><a href="">餐饮商铺指南</a></li>
+
+                                   
+
+                               </ul>
+
+                           {/if}    
+
+                       </li>
+
+                       {/loop}
+
+                </ul>
+
+              {/if}  
+
+        </li>
+
+        {/loop}
+
+        
+
+     </ul>
+
+</div>
+
+
+
+<!--右边浮动窗口-->
+
+<div class="float">
+
+	 <div class="name">万里小勤勤欢迎您！</div>
+
+     <div class="middle">
+
+          <img src="{path template/}/images/code.jpg">
+
+          <p>扫描微信二维码</p>
+
+     </div>
+
+     <div class="heart"><img src="{path template/}/images/heart.png"></div>
+
+</div>
